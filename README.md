@@ -3,6 +3,21 @@ A method for increasing the recognition rate of aruco code or QR code by algorit
 
 ![原始图](./aruco_marker.png)
 
+The process of reducing image reflection and enhancing edges using OpenCV can be divided into several steps. Here is a basic guide:
+
+Read the image: Use the imread function from OpenCV to read the image.
+
+Convert to HSV color space (optional): If color information is important for processing, consider converting the image from BGR to HSV color space. The HSV color space separates brightness and chrominance information more easily, which can help in dealing with reflections. Use the cvtColor function for conversion.
+
+Reduce brightness or adjust the V channel: In the HSV color space, V represents brightness (Value). You can reduce reflections by decreasing the values in the V channel. If the image is in the BGR color space, you can consider reducing the values of all channels to decrease brightness, thus reducing reflections.
+
+Apply Contrast Limited Adaptive Histogram Equalization (CLAHE): CLAHE is a method used to improve local contrast and enhance edges in an image. In OpenCV, you can use the createCLAHE function to create a CLAHE object and then apply it to the brightness or V channel of the image.
+
+Save or display the image: Finally, use the imwrite function to save the processed image or the imshow function to display it in a window.
+
+Here is a simple OpenCV Python code example that demonstrates how to reduce image reflections and enhance edges:
+
+
 通过OpenCV减少图像反光并增强边缘的方法可以包括几个步骤。以下是一个基本的指南：
 
 1. **读取图像**：
