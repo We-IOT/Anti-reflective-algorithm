@@ -36,7 +36,7 @@ hsv_image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
 h, s, v = cv2.split(hsv_image)
 
 # 创建CLAHE对象并应用于V通道
-clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
+clahe = cv2.createCLAHE(clipLimit=100.0, tileGridSize=(8,8))
 v_clahe = clahe.apply(v)
 
 # 合并处理后的HSV通道
@@ -53,7 +53,7 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 
 # 保存处理后的图像（如果需要）
-cv2.imwrite('reduced_glare_image.png', result)
+cv2.imwrite('reduced_glare_image.png', image_clahe)
 ```
 
 请注意，以上代码只是一个基本示例，并且可能需要根据您的具体图像和需求进行调整。例如，CLAHE参数等都可能需要根据实际情况进行微调。
