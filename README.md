@@ -1,7 +1,7 @@
 # Anti-reflective-algorithm
 A method for increasing the recognition rate of aruco code or QR code by algorithm under reflective conditions （一种在反光条件下，通过算法增加aruco码或者QR码识别率的方法）
 
-![](./aruco_marker.png)
+![原始图](./aruco_marker.png)
 
 通过OpenCV减少图像反光并增强边缘的方法可以包括几个步骤。以下是一个基本的指南：
 
@@ -57,3 +57,6 @@ cv2.imwrite('reduced_glare_image.png', result)
 ```
 
 请注意，以上代码只是一个基本示例，并且可能需要根据您的具体图像和需求进行调整。例如，CLAHE参数等都可能需要根据实际情况进行微调。
+
+![处理后图片](./reduced_glare_image.png)
+
